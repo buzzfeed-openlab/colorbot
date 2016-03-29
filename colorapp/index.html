@@ -1,0 +1,8 @@
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+  var socket = io.connect('http://localhost:3000');
+  socket.on('color', function (data) {
+    document.body.style.backgroundColor = data.color;
+    console.log(data.color);
+  });
+</script>
