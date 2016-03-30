@@ -6,7 +6,7 @@ var io = require('socket.io')(server);
 var qs= require('querystring');
 
 
-server.listen(3000);
+server.listen(80);
 // app.set('views', './views')
 // app.set('view engine', 'jade');
 
