@@ -3,8 +3,9 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var qs= require('querystring');
 
+var port = process.env.PORT || 3000;
 
-server.listen(80);
+server.listen(port);
 
 
 var newColor="white";
