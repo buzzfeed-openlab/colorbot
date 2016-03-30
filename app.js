@@ -1,5 +1,3 @@
-// var http = require('http').Server(app);
-
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
@@ -7,8 +5,6 @@ var qs= require('querystring');
 
 
 server.listen(80);
-// app.set('views', './views')
-// app.set('view engine', 'jade');
 
 
 var newColor="white";
@@ -30,11 +26,7 @@ app.post('/', function (req, res) {
 
         req.on('end', function () {
             var post = qs.parse(body);
-            // console.log(post.color);
             newColor = post.color;
-            // currently incorrect syntax on updating the socket
-            // io.on('connection', function(socket) {
-            // 	socket.emit('color', {color: newColor});
             io.sockets.emit('color', {color: newColor});
         });
     res.end();
@@ -46,8 +38,3 @@ io.on('connection', function(socket){
   socket.emit('color', { color: newColor });
 
 });
-
-// io.on('ready', function(socket){
-//   socket.emit('color', { color: newColor });
-// });
-
