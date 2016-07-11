@@ -14,4 +14,8 @@ You'll need a hosted Mongo database of some kind (I used [mlab](https://mlab.com
 
 You can upload the color-emoji.json file into your MongoDB collection. You can then use the code in the `hook.io` folder to pass webhooks you set up in Slack to your database and to the `colorpage` on your server.
 
+### How do I build a cool Slack-controlled color lamp?
+
+You can build an internet connected lamp from a Particle Internet button using the code in the `colorlamp` folder and the `colorlamp-hook.js` hook in the `hook.io` folder.
+
 Have fun!
